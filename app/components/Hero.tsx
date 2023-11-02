@@ -16,7 +16,7 @@ const Hero = () => {
                 <h1 className="text-white absolute text-[200px] right-36 select-none">倉珠玖</h1> 
             </div>
             <div className="flex w-full justify-end">
-                <Button variant='secondary' className="mr-96 mt-16 px-16">Reservation</Button>
+                <Button variant='secondary' className="mr-96 mt-16 px-16">Make a reservation</Button>
             </div>
         </div>
     )

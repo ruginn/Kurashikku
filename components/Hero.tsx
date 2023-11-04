@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Sushi from '../public/sushi1.jpg'
 import { Button } from "@/components/ui/button"
 import {motion} from 'framer-motion'
+import {useState} from 'react'
 
 
 const Hero = () => {
@@ -18,6 +19,25 @@ const Hero = () => {
         hidden: {
             opacity: 0, 
             y: 100
+        }
+    }
+
+    const [reservationValue, setReservationValue] = useState('Make a reservation')
+    const [menuButton, setMenuButton] = useState('Menu')
+
+    const handleButtonHoverReservation = () => {
+        if (reservationValue === 'Make a reservation'){
+            setReservationValue('予約する')
+        } else {
+            setReservationValue('Make a reservation')
+        }
+    }
+
+    const handleMenuHover = () => {
+        if (menuButton === 'Menu') {
+            setMenuButton('メニュー')
+        } else {
+            setMenuButton('Menu')
         }
     }
 
@@ -37,7 +57,8 @@ const Hero = () => {
                 className="text-white absolute text-[200px] right-36 select-none">倉珠玖</motion.h1> 
             </div>
             <div className="flex w-full justify-end">
-                <Button variant='secondary' className="mr-96 mt-16 px-16">Make a reservation</Button>
+                <Button variant='secondary' className="mt-16 w-48 mr-5" onMouseEnter={handleMenuHover} onMouseLeave={handleMenuHover}>{menuButton}</Button>
+                <Button variant='secondary' className="mt-16 w-48 mr-96" onMouseEnter={handleButtonHoverReservation} onMouseLeave={handleButtonHoverReservation}>{reservationValue}</Button>
             </div>
         </div>
     )

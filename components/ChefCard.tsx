@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image"
 
 interface TeamMember {
+    id: number, 
     name: string, 
     role: string, 
     bio: string, 

@@ -11,7 +11,7 @@ const History = () => {
             opacity: 1, 
             y: 0, 
             transition: {
-                duration: 1,
+                duration: 2,
                 // staggerChildren: 6,
             },
             color: '#000000'
@@ -27,9 +27,9 @@ const History = () => {
         visible: {
             backgroundColor: '#f1f1f1',
             transition: {
-                duration: 5, 
+                duration: 2, 
                 staggerChildren: 0.5,
-                delay: 2, 
+                delay: 1, 
             } 
         }, 
         hidden: {

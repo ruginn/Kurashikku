@@ -24,7 +24,7 @@ const Hero = () => {
     }
 
     const [reservationValue, setReservationValue] = useState('Make a reservation')
-    const [menuButton, setMenuButton] = useState('Menu')
+    const [menuButton, setMenuButton] = useState('Catering')
 
     const handleButtonHoverReservation = () => {
         if (reservationValue === 'Make a reservation'){
@@ -35,10 +35,10 @@ const Hero = () => {
     }
 
     const handleMenuHover = () => {
-        if (menuButton === 'Menu') {
-            setMenuButton('メニュー')
+        if (menuButton === 'Catering') {
+            setMenuButton('ケータリング')
         } else {
-            setMenuButton('Menu')
+            setMenuButton('Catering')
         }
     }
 

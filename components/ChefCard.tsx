@@ -16,9 +16,9 @@ const ChefCard = ({chef} : {chef:TeamMember} ) => {
                 alt='chef'
                 className='h-72 w-48 object-cover rounded-2xl'
             /> 
-            <h3>{chef.name}</h3>
-            <p>{chef.role}</p>
-            <p className="text-center">{chef.bio}</p>
+            <h3 className="text-2xl font-semibold">{chef.name}</h3>
+            <p className="text-xl">{chef.role}</p>
+            <p className="text-center text-sm">{chef.bio}</p>
         </div>
     )
 }

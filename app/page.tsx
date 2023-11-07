@@ -1,7 +1,7 @@
 import History from "@/components/History";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 import Team from "@/components/Team";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
       <Hero />
       <Team />
       <History />
+      <Footer />
     </>
   )
 }

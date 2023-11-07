@@ -57,7 +57,7 @@ const History = () => {
                     width={400}
                     className='object-contain z-20 rounded-md'
                 />
-                <div className='bg-red-800 w-96 h-24 absolute right-[450px] z-10 bottom-[70px] rounded-md'></div>
+                <div className='bg-red-700 w-96 h-24 absolute right-[450px] z-10 bottom-[70px] rounded-md'></div>
                 {/* <div className='bg-red-800 w-96 h-36 absolute left-[500px] top-[90px] z-10 rounded-md'></div> */}
             </div>
             <div className='w-[50%] flex justify-center items-center relative'>

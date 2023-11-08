@@ -3,7 +3,7 @@ import { Badge, Facebook, Twitter, Instagram } from "lucide-react"
 
 const Footer = () => {
     return (
-        <div className="w-full h-[300px] bg-gray-700 flex flex-col relative">
+        <div className="w-full h-[300px] bg-black flex flex-col relative">
             <div className="w-full flex items-center justify-between mt-3">
                 <div className="flex justify-center items-center pl-16">
                     <Badge className="stroke-red-700 stroke-[3px] w-8 h-8"/>
@@ -29,7 +29,7 @@ const Footer = () => {
                     <p>Sunday: 5:30 PM - 9:30 PM</p>
                 </div>
             </div>
-            <h3 className="text-white absolute bottom-2 self-center">Copyright © 2023 Kurashiku. All rights reserved.</h3>
+            <p className="text-sm text-white absolute bottom-2 self-center">Copyright © 2023 Kurashiku. All rights reserved.</p>
         </div>
     )
 }

@@ -19,7 +19,7 @@ const ChefCard = ({chef} : {chef:TeamMember} ) => {
             /> 
             <h3 className="text-2xl font-semibold">{chef.name}</h3>
             <p className="text-xl">{chef.role}</p>
-            <p className="text-center text-sm">{chef.bio}</p>
+            <p className=" text-sm">{chef.bio}</p>
         </div>
     )
 }

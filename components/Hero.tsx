@@ -1,14 +1,16 @@
 'use client'
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+// import Link from "next/link"
 import Image from 'next/image'
 import Sushi from '../public/sushi1.jpg'
 import { Button } from "@/components/ui/button"
 import {motion} from 'framer-motion'
 import {useState} from 'react'
+import { useReservation } from "@/hooks/use-reservation"
 
 
 const Hero = () => {
+    const reservation = useReservation()
     const variants = {
         visible: {
             opacity: 1, 
@@ -64,9 +66,9 @@ const Hero = () => {
             </div>
             <div className="flex w-full justify-end">
                 <Button variant='secondary' className="mt-16 w-48 mr-5" onMouseEnter={handleMenuHover} onMouseLeave={handleMenuHover}>{menuButton}</Button>
-                <Link href='/reservation'>
-                    <Button variant='secondary' className="mt-16 w-48 mr-96" onMouseEnter={handleButtonHoverReservation} onMouseLeave={handleButtonHoverReservation}>{reservationValue}</Button>
-                </Link>
+                {/* <Link href='/reservation'> */}
+                    <Button variant='secondary' onClick={reservation.onOpen} className="mt-16 w-48 mr-96" onMouseEnter={handleButtonHoverReservation} onMouseLeave={handleButtonHoverReservation}>{reservationValue}</Button>
+                {/* </Link> */}
             </div>
         </div>
     )

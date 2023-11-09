@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import Navbar from '@/components/Navbar'
+import { ModalProvider } from '@/components/providers/modal-provider'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '500', '300', '400', '600', '700', '800', '900'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={poppins.className}>
+          <ModalProvider />
           <Navbar />
           {children}
         </body>

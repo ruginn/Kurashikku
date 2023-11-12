@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="w-full h-[300px] bg-black flex flex-col relative">
             <div className="w-full flex items-center justify-between mt-3">
                 <div className="flex justify-center items-center pl-16">
-                    <Badge className="stroke-red-700 stroke-[3px] w-8 h-8"/>
+                    <Badge className="stroke-yellow-500 stroke-[3px] w-8 h-8"/>
                     <h1 className="text-3xl text-white ">Kurashiru</h1>
                 </div>
                 <div className="flex pr-16">

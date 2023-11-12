@@ -25,7 +25,7 @@ import {
 const ReservationModal = () => {
     const reservation = useReservation();
 
-    const [date, setDate] = useState(null)
+    const [date, setDate] = useState<Date>()
     
     useEffect(() => {
       console.log(date)

@@ -57,7 +57,7 @@ const ReservationModal = () => {
                 <SelectContent>
                     {partySize.map((party) => {
                         return (
-                            <SelectItem value={party.toString()}>{party.toString()}</SelectItem>
+                            <SelectItem key={party.toString()} value={party.toString()}>{party.toString()}</SelectItem>
                         )
                     })}
                 </SelectContent>
@@ -94,7 +94,7 @@ const ReservationModal = () => {
                 <SelectContent>
                     {hours.map((hour) => {
                         return (
-                            <SelectItem value={hour}>{hour}</SelectItem>
+                            <SelectItem key={hour} value={hour}>{hour}</SelectItem>
                         )
                     })}
                 </SelectContent>

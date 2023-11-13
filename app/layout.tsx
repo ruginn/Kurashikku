@@ -4,6 +4,7 @@ import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import Navbar from '@/components/Navbar'
 import { ModalProvider } from '@/components/providers/modal-provider'
+import { ConvexClientProvider } from '@/components/providers/convex-provider'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '500', '300', '400', '600', '700', '800', '900'] })
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+    // <ClerkProvider>
+    <ConvexClientProvider>
+
       <html lang="en">
         <body className={poppins.className}>
           <ModalProvider />
@@ -26,6 +29,7 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-    </ClerkProvider>
+    </ConvexClientProvider>
+    // </ClerkProvider>
   )
 }

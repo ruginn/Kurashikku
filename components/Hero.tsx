@@ -56,9 +56,9 @@ const Hero = () => {
                 >
                 </Image>
                 <div className="absolute left-[300px] font-bold">
-                    <p className="text-[100px] text-white leading-tight hover:scale-125 cursor-pointer select-none">MENU</p>
-                    <p className="text-[100px] text-white leading-tight hover:scale-125 cursor-pointer select-none">TEAM</p>
-                    <p className="text-[100px] text-white leading-tight hover:scale-125 cursor-pointer select-none">HISTORY</p>
+                    <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">MENU</motion.p>
+                    <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">TEAM</motion.p>
+                    <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">HISTORY</motion.p>
                 </div>
                 <motion.h1 
                 initial='hidden' animate='visible' variants={variants} 

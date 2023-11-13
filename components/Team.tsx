@@ -63,7 +63,7 @@ const Team = () => {
 
 
     return (
-        <div className='w-full relative'>
+        <div className='w-full relative bg-white'>
             <Badge className="w-96 h-96 mr-1 stroke-yellow-500 stroke-[4px] absolute right-0 -top-[180px]"/>
             <Badge className="w-72 h-72 mr-1 stroke-yellow-500 stroke-[4px] absolute left-0 -bottom-[150px]"/>
             <h1 className='text-[60px]'>OUR TEAM</h1>

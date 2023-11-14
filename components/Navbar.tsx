@@ -21,8 +21,7 @@ const Navbar = () => {
     }
 }
 
-// const {isAuthenticated, isLoading} = useConvexAuth()
-
+const {isAuthenticated, isLoading} = useConvexAuth()
 
 
   return (
@@ -38,12 +37,12 @@ const Navbar = () => {
                 <li className="m-4">Create Reservation</li>
             </button>
             <button className="text-sm">
-                {/* <SignedIn>
+                <SignedIn>
                   <UserButton afterSignOutUrl="/" />
                 </SignedIn>
                 <SignedOut>
                  <SignInButton mode='modal'/>
-                </SignedOut> */}
+                </SignedOut>
                 {/* <SignInButton mode='modal'/> */}
             </button>
         </ul>

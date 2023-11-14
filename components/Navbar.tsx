@@ -3,6 +3,7 @@
 import { SignInButton, UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
 import {motion} from 'framer-motion'
 import { Badge } from "lucide-react"
+import { useConvexAuth } from "convex/react"
 
 
 const Navbar = () => {
@@ -20,6 +21,9 @@ const Navbar = () => {
     }
 }
 
+// const {isAuthenticated, isLoading} = useConvexAuth()
+
+
 
   return (
     <motion.nav
@@ -35,12 +39,12 @@ const Navbar = () => {
             </button>
             <button className="text-sm">
                 {/* <SignedIn>
-                  <UserButton />
+                  <UserButton afterSignOutUrl="/" />
                 </SignedIn>
                 <SignedOut>
                  <SignInButton mode='modal'/>
                 </SignedOut> */}
-                <SignInButton mode='modal'/>
+                {/* <SignInButton mode='modal'/> */}
             </button>
         </ul>
     </motion.nav>

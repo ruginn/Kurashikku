@@ -81,7 +81,7 @@ const ReservationModal = () => {
                     <SelectContent>
                         {partySize.map((party) => {
                             return (
-                                <SelectItem key={party.toString()} value={party.toString()}>{party.toString()}</SelectItem>
+                                <SelectItem className='cursor-pointer focus:bg-yellow-500' key={party.toString()} value={party.toString()}>{party.toString()}</SelectItem>
                             )
                         })}
                     </SelectContent>
@@ -121,12 +121,12 @@ const ReservationModal = () => {
                 <SelectContent>
                     {hours.map((hour) => {
                         return (
-                            <SelectItem key={hour} value={hour}>{hour}</SelectItem>
+                            <SelectItem className='cursor-pointer focus:bg-yellow-500' key={hour} value={hour}>{hour}</SelectItem>
                         )
                     })}
                 </SelectContent>
                 </Select>
-                <Button onClick={createReservation} className="mt-6">Book Reservation</Button>
+                <Button onClick={createReservation} className="mt-6 bg-yellow-500 rounded-xl hover:bg-yellow-400">Book Reservation</Button>
             </DialogContent>}
             {resCon && 
             <DialogContent>

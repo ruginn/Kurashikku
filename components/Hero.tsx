@@ -65,9 +65,9 @@ const Hero = () => {
                 className="text-white absolute text-[200px] right-36 select-none">倉珠玖</motion.h1> 
             </div>
             <div className="flex w-full justify-end">
-                <Button variant='secondary' className="mt-16 w-48 mr-5" onMouseEnter={handleMenuHover} onMouseLeave={handleMenuHover}>{menuButton}</Button>
+                <Button variant='secondary' className="mt-16 w-48 mr-5 bg-white rounded-xl hover:bg-slate-200" onMouseEnter={handleMenuHover} onMouseLeave={handleMenuHover}>{menuButton}</Button>
                 {/* <Link href='/reservation'> */}
-                    <Button variant='secondary' onClick={reservation.onOpen} className="mt-16 w-48 mr-96" onMouseEnter={handleButtonHoverReservation} onMouseLeave={handleButtonHoverReservation}>{reservationValue}</Button>
+                    <Button variant='secondary' onClick={reservation.onOpen} className="mt-16 w-48 mr-96 bg-white rounded-xl hover:bg-slate-200" onMouseEnter={handleButtonHoverReservation} onMouseLeave={handleButtonHoverReservation}>{reservationValue}</Button>
                 {/* </Link> */}
             </div>
         </div>

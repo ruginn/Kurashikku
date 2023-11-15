@@ -78,6 +78,17 @@ const ReservationModal = () => {
         reservation.onClose()
     }
 
+
+    const [closeCal, setCloseCal] = useState(false)
+
+    const handleOpenCal = () => {
+        setCloseCal(true)
+    }
+
+    const handleCloseCal = () => {
+        setCloseCal(false)
+    }
+
     return (
         <Dialog open={reservation.isOpen} onOpenChange={closeModal}>
             {!resCon && <DialogContent>
@@ -103,7 +114,10 @@ const ReservationModal = () => {
                         })}
                     </SelectContent>
                 </Select>
-                <Popover>
+                <Popover
+                    onOpenChange={handleOpenCal}
+                    open={closeCal}
+                >
                     <PopoverTrigger asChild>
                         <Button
                         variant={"outline"}
@@ -125,6 +139,7 @@ const ReservationModal = () => {
                         selected={date}
                         onSelect={setDate}
                         initialFocus
+                        onDayClick={handleCloseCal}
                         />
                     </PopoverContent>
                 </Popover>

@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogHeader} from "@/components/ui/dialog";
 import {useState, useEffect} from 'react'
 import { format } from "date-fns"
 import { Calendar as CalendarIcon, ChevronDown, Clock, Users } from "lucide-react"
+import { SignInButton, UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
  
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -19,18 +20,30 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
+import { useUser } from "@clerk/nextjs";
 
 
 
 const ReservationModal = () => {
+    const {user} = useUser()
     const reservation = useReservation();
     const [resCon, setResCon] = useState(false)
+    const [authUser, setAuthUser] = useState(false)
     const [date, setDate] = useState<Date>()
     
-    const createReservation = () => {
+    useEffect(() => {
+        if (user) {
+            console.log(user)
+        }
+    }, [])
+
+    const createReservation = () => {  
+        if (user) {
+            setResCon(true)
+        }else {
+            setAuthUser(true)
+        }
         
-        setResCon(true)
-        console.log('texting')
     }
     const months = [
         "January", "February", "March", "April", 
@@ -47,6 +60,7 @@ const ReservationModal = () => {
     },[date])
 
     
+    
     const partySize = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     
     const [partyVal, setPartyVal] = useState<String>()
@@ -59,10 +73,13 @@ const ReservationModal = () => {
     
     const [time, setTime] = useState<String>()
 
-
+    const closeModal = () => {
+        setResCon(false)
+        reservation.onClose()
+    }
 
     return (
-        <Dialog open={reservation.isOpen} onOpenChange={reservation.onClose}>
+        <Dialog open={reservation.isOpen} onOpenChange={closeModal}>
             {!resCon && <DialogContent>
                 <DialogHeader className="border-b pb-3">
                 <h2 className="text-lg font-medium">
@@ -137,6 +154,18 @@ const ReservationModal = () => {
                 </DialogHeader>     
                 <div className="mb-16">{`Your reservation of ${partyVal} has been set for ${resMonth} ${date?.getDate()}, ${date?.getFullYear()} at ${time}.`}</div> 
             </DialogContent>   
+            }
+            {authUser &&
+                <DialogContent>
+                <DialogHeader className="border-b pb-3">
+                <h2 className="text-lg font-medium">
+                    Please login to make a Reservation. 
+                </h2>
+                </DialogHeader>
+                <Button onClick={reservation.onClose}>
+                    <SignInButton mode='modal'/>
+                </Button>     
+            </DialogContent> 
             }
         </Dialog>
     ) 

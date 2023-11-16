@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import {motion} from 'framer-motion'
 import {useState} from 'react'
 import { useReservation } from "@/hooks/use-reservation"
+import Link from "next/link"
 
 
 const Hero = () => {
@@ -47,7 +48,7 @@ const Hero = () => {
 
 
     return (
-        <div className={cn('h-[calc(100vh-4rem)] bg-black flex-col justify-center items-center mt-16')}>
+        <div className={cn('h-[calc(100vh-4rem)] bg-black flex-col justify-center items-center')}>
             <div className="flex relative justify-center items-center w-full ">
                 <Image
                     src={Sushi}
@@ -56,7 +57,9 @@ const Hero = () => {
                 >
                 </Image>
                 <div className="absolute left-[300px] font-bold">
-                    <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">MENU</motion.p>
+                    <Link href='/menu'>
+                        <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">MENU</motion.p>
+                    </Link>
                     <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">TEAM</motion.p>
                     <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">HISTORY</motion.p>
                 </div>

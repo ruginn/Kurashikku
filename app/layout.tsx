@@ -26,7 +26,9 @@ export default function RootLayout({
         <body className={poppins.className}>
           <ModalProvider />
           <Navbar />
-          {children}
+          <div className='mt-16'>
+            {children}
+          </div>
         </body>
       </html>
     </ConvexClientProvider>

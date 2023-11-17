@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader} from "@/components/ui/dialog";
 import {useState, useEffect} from 'react'
 import { format } from "date-fns"
 import { Calendar as CalendarIcon, ChevronDown, Clock, Users } from "lucide-react"
-import { SignInButton, UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
+import { SignInButton } from "@clerk/nextjs"
  
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"

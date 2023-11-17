@@ -4,10 +4,12 @@ import { SignInButton, UserButton, SignedIn, SignedOut } from "@clerk/nextjs"
 import {motion} from 'framer-motion'
 import { Badge } from "lucide-react"
 import { useConvexAuth } from "convex/react"
+import { useReservation } from "@/hooks/use-reservation"
 import Link from "next/link"
 
 
 const Navbar = () => {
+  const reservation = useReservation()
   const variants = {
     visible: {
         opacity: 1, 
@@ -36,7 +38,7 @@ const {isAuthenticated, isLoading} = useConvexAuth()
           </div>
         </Link>
         <ul className="flex mr-8">
-          <button className="text-sm">
+          <button className="text-sm" onClick={reservation.onOpen}>
                 <li className="m-4">Create Reservation</li>
             </button>
             <button className="text-sm">

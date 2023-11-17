@@ -9,6 +9,8 @@ import {useState} from 'react'
 import { useReservation } from "@/hooks/use-reservation"
 import Link from "next/link"
 
+import {Link as Linker} from 'react-scroll'
+
 
 const Hero = () => {
     const reservation = useReservation()
@@ -58,14 +60,18 @@ const Hero = () => {
                 </Image>
                 <div className="absolute left-[300px] font-bold">
                     <Link href='/menu'>
-                        <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">MENU</motion.p>
+                        <motion.p whileHover={{scale:1.4}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">MENU</motion.p>
                     </Link>
-                    <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">TEAM</motion.p>
-                    <motion.p whileHover={{scale:1.5}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">HISTORY</motion.p>
+                    <Linker to='team' spy={true} smooth={true} offset={-60} duration={500}>
+                        <motion.p whileHover={{scale:1.4}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">TEAM</motion.p>
+                    </Linker>
+                    <Linker to='history' spy={true} smooth={true} offset={-60} duration={500}>
+                        <motion.p whileHover={{scale:1.4}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">HISTORY</motion.p>
+                    </Linker>
                 </div>
                 <motion.h1 
                 initial='hidden' animate='visible' variants={variants} 
-                className="text-white absolute text-[200px] right-36 select-none">倉珠玖</motion.h1> 
+                className="text-white absolute text-[200px] right-36 select-none font-bold">倉珠玖</motion.h1> 
             </div>
             <div className="flex w-full justify-end">
                 <Button variant='secondary' className="mt-16 w-48 mr-5 bg-white rounded-xl hover:bg-slate-200" onMouseEnter={handleMenuHover} onMouseLeave={handleMenuHover}>{menuButton}</Button>

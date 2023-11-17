@@ -39,7 +39,7 @@ const History = () => {
 
 
   return (
-      <motion.div 
+      <motion.div id='history'
         variants={divVariants} initial='hidden' whileInView='visible' viewport={{margin: '600px'}}
       className='w-full h-screen flex flex-col items-center justify-center'>
         <motion.h1 

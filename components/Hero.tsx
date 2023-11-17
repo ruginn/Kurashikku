@@ -71,7 +71,7 @@ const Hero = () => {
                 </div>
                 <motion.h1 
                 initial='hidden' animate='visible' variants={variants} 
-                className="text-white absolute text-[200px] right-36 select-none font-bold">倉珠玖</motion.h1> 
+                className="text-white absolute text-[200px] right-36 select-none font-bold hidden lg:block">倉珠玖</motion.h1> 
             </div>
             <div className="flex w-full justify-end">
                 <Button variant='secondary' className="mt-16 w-48 mr-5 bg-white rounded-xl hover:bg-slate-200" onMouseEnter={handleMenuHover} onMouseLeave={handleMenuHover}>{menuButton}</Button>

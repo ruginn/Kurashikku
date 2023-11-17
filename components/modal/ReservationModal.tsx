@@ -28,20 +28,12 @@ const ReservationModal = () => {
     const {user} = useUser()
     const reservation = useReservation();
     const [resCon, setResCon] = useState(false)
-    const [authUser, setAuthUser] = useState(false)
     const [date, setDate] = useState<Date>()
     
-    useEffect(() => {
-        if (user) {
-            console.log(user)
-        }
-    }, [])
 
     const createReservation = () => {  
         if (user) {
             setResCon(true)
-        }else {
-            setAuthUser(true)
         }
         
     }
@@ -170,16 +162,16 @@ const ReservationModal = () => {
                 <div className="mb-16">{`Your reservation of ${partyVal} has been set for ${resMonth} ${date?.getDate()}, ${date?.getFullYear()} at ${time}.`}</div> 
             </DialogContent>   
             }
-            {authUser &&
+            {!user &&
                 <DialogContent>
                 <DialogHeader className="border-b pb-3">
                 <h2 className="text-lg font-medium">
                     Please login to make a Reservation. 
                 </h2>
                 </DialogHeader>
-                <Button onClick={reservation.onClose}>
-                    <SignInButton mode='modal'/>
-                </Button>     
+                    <SignInButton mode='modal'>
+                        <Button onClick={reservation.onClose} className="mt-6 bg-yellow-500 rounded-xl hover:bg-yellow-400">Sign in</Button>     
+                    </SignInButton>
             </DialogContent> 
             }
         </Dialog>

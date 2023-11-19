@@ -58,15 +58,15 @@ const Hero = () => {
                     className="h-[600px] w-[1000px] object-cover rounded-2xl mt-32"
                 >
                 </Image>
-                <div className="absolute left-[300px] font-bold">
+                <div className="absolute left-[20px] lg:left-[300px] font-bold">
                     <Link href='/menu'>
-                        <motion.p whileHover={{scale:1.4}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">MENU</motion.p>
+                        <motion.p whileHover={{scale:1.4, x:65}} className="text-[60px] sm:text-[100px] text-white leading-tight  cursor-pointer select-none">MENU</motion.p>
                     </Link>
                     <Linker to='team' spy={true} smooth={true} offset={-60} duration={500}>
-                        <motion.p whileHover={{scale:1.4}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">TEAM</motion.p>
+                        <motion.p whileHover={{scale:1.4, x:65}} className="text-[60px] sm:text-[100px] text-white leading-tight  cursor-pointer select-none">TEAM</motion.p>
                     </Linker>
                     <Linker to='history' spy={true} smooth={true} offset={-60} duration={500}>
-                        <motion.p whileHover={{scale:1.4}} className="text-[100px] text-white leading-tight  cursor-pointer select-none">HISTORY</motion.p>
+                        <motion.p whileHover={{scale:1.4, x:65}} className="text-[60px] sm:text-[100px] text-white leading-tight  cursor-pointer select-none">HISTORY</motion.p>
                     </Linker>
                 </div>
                 <motion.h1 
